@@ -1,0 +1,173 @@
+/* ========== 全局基础样式重置 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "微软雅黑", sans-serif;
+    background-color: #f5f5f5;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* ======================================
+   实验要求1：导航栏：设置背景色、文字居中、间距、hover效果
+   实验要求2：flex弹性布局 实现导航栏横向排列
+   ====================================== */
+.main-nav {
+    /* flex弹性布局 实现导航菜单横向均匀排列 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 导航栏背景色 */
+    background-color: #ff4400;
+    height: 55px;
+    /* 整体文字居中 */
+    text-align: center;
+}
+/* 导航每一个菜单项 */
+.nav-item {
+    /* 菜单项之间左右间距 */
+    margin: 0 28px;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 55px;
+    /* CSS3过渡动画 提前设置，实现hover平滑效果 */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+/* 导航栏鼠标悬浮hover效果（变色+文字阴影） */
+.nav-item:hover {
+    color: #fff200;
+    /* 文字阴影效果 */
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+/* 头部LOGO区域 */
+.header {
+    padding: 15px 0;
+    text-align: center;
+}
+.header img {
+    height: 60px;
+}
+
+/* Banner轮播大图 */
+.banner {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.banner img {
+    width: 100%;
+    display: block;
+}
+
+/* 所有板块通用标题样式 */
+.section-title {
+    width: 1200px;
+    margin: 40px auto 20px;
+    font-size: 22px;
+    color: #222;
+    font-weight: 600;
+    border-left: 5px solid #ff4400;
+    padding-left: 10px;
+}
+
+/* ======================================
+   实验要求2：flex弹性布局 实现所有分类商品栏排列
+   ====================================== */
+.goods-box {
+    width: 1200px;
+    margin: 0 auto;
+    /* flex布局 实现商品卡片横向排列、自动换行 */
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* ======================================
+   实验要求3：图片：设置宽高、居中、圆角
+   ====================================== */
+.goods-card img {
+    /* 统一设置图片固定宽高 */
+    width: 220px;
+    height: 200px;
+    /* 图片居中显示 */
+    display: block;
+    margin: 0 auto;
+    /* 图片圆角效果 */
+    border-radius: 12px;
+    /* 图片自适应填充，不变形 */
+    object-fit: cover;
+    /* CSS3过渡动画，hover平滑效果 */
+    transition: all 0.4s ease;
+}
+
+/* ======================================
+   实验要求4：文字：字号、颜色、行高、对齐方式
+   ====================================== */
+.goods-name {
+    /* 文字字号 */
+    font-size: 16px;
+    /* 文字颜色 */
+    color: #333333;
+    /* 文字行高 */
+    line-height: 45px;
+    /* 文字居中对齐 */
+    text-align: center;
+}
+
+/* ======================================
+   实验要求5：用CSS3实现 hover变色、阴影、过渡效果
+   商品卡片整体悬浮装饰效果
+   ====================================== */
+.goods-card {
+    transition: all 0.3s ease;
+}
+/* 卡片整体hover阴影 */
+.goods-card:hover {
+    box-shadow: 0 10px 28px rgba(255, 68, 0, 0.2);
+    transform: translateY(-5px);
+}
+/* 图片hover额外放大+加深阴影效果 */
+.goods-card:hover img {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.06);
+}
+/* 商品文字hover变色效果 */
+.goods-card:hover .goods-name {
+    color: #ff4400;
+}
+
+/* 底部footer区域样式 */
+.footer {
+    width: 1200px;
+    margin: 80px auto 30px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+.footer-qrcode {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+.footer-qrcode img {
+    width: 100px;
+    height: 100px;
+}
+.footer-info p {
+    font-size: 15px;
+    color: #666;
+    line-height: 30px;
+}
